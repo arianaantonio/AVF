@@ -16,11 +16,11 @@ AVF 1311
     <body>
         <div class="app" id="main">
             <section data-role="page" id="home">
-                <header>
+                <header data-role="header">
                     <h1>Ariana Antonio</h1>
                     <h2>AVF 1311</h2>
                 </header>
-                <div data-role="content">
+                <section data-role="content">
                     <nav>
                         <ul data-role="listview">
                             <li>
@@ -68,12 +68,27 @@ AVF 1311
                             <li>
                                 <span>
                                     <img src="img/research_01.gif" class="icon">
-                                    <a href="#">Research</a>
+                                    <a href="#research">Research</a>
                                 </span>
                             </li>
                         </ul>
                     </nav>
-                </div>
+                </section>
+            </section>
+            <section data-role="page" id="research">
+                <header data-role="header" data-add-back-btn="true">
+                    <a addBackBtn="true" data-rel="back">Back</a>
+                    <h1>Research</h1>
+                </header>
+                <section data-role="content">
+                    <nav>
+                        <ul data-role="listview">
+                            <li><a href="#">Data Research, Project Intent</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                            <li><a href="#">Industry Research</a></li>
+                        </ul>
+                    </nav>
+                </section>
             </section>
         </div>
         <script src="js/jquery-2.0.3.min.js"></script>
