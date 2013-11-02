@@ -1,0 +1,35 @@
+/*
+Author: Ariana Antonio
+Project 1
+AVF 1311
+ */
+body {background-image: url(../img/iceburg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: verdana;
+}
+h1, h2 { text-align: center }
+a {color: black;
+    font-family: verdana;
+    text-decoration: none;
+    opacity: 0.9;
+}
+li{list-style: none;
+    outline: solid;
+    outline-width: thin;
+    font-family: verdana;
+    font-size: 20pt;
+    background-color: white;
+    opacity: 0.4;
+
+}
+.icon {height:5%;
+    width: 5%;
+    opacity: 1;
+    background-color: grey;
+    
+}
+img {opacity: 1;
+color: black;}
+header a {color:white;}

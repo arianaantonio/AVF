@@ -1,40 +1,101 @@
 <!DOCTYPE html>
 <!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+Author: Ariana Antonio
+Project 1
+AVF 1311
 -->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Demo App</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Listo</p>
-            </div>
+        <div class="app" id="main">
+            <section data-role="page" id="home">
+                <header data-role="header">
+                    <h1>Ariana Antonio</h1>
+                    <h2>AVF 1311</h2>
+                </header>
+                <section data-role="content">
+                    <nav>
+                        <ul data-role="listview">
+                            <li>
+                                <span>
+                                    <img src="img/camera_01.gif" class="icon">
+                                    <a href="#">Camera</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/compass_01.gif" class="icon">
+                                    <a href="#">Compass</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/contacts_01.gif" class="icon">
+                                    <a href="#">Contacts</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/geo_01.gif" class="icon">
+                                    <a href="#">Geolocation</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/run_01.gif" class="icon">
+                                    <a href="#">Accelerometer</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/instagram_01.gif" class="icon">
+                                    <a href="#">Instagram</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/sun_01.gif" class="icon">
+                                    <a href="#">Weather</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/research_01.gif" class="icon">
+                                    <a href="#research">Research</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
+            <section data-role="page" id="research">
+                <header data-role="header" data-add-back-btn="true">
+                    <a addBackBtn="true" data-rel="back">Back</a>
+                    <h1>Research</h1>
+                </header>
+                <section data-role="content">
+                    <nav>
+                        <ul data-role="listview">
+                            <li><a href="#">Data Research, Project Intent</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                            <li><a href="#">Industry Research</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </section>
         </div>
+        <script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/jquery.mobile-1.3.2.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
