@@ -7,6 +7,8 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+    <access origin="*"/>
+    <access origin="http://*.instagram.com"/>
     <content src="index.html" />
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />

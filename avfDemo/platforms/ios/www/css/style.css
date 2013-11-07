@@ -5,9 +5,10 @@ AVF 1311
  */
 body {background-image: url(../img/iceburg.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     color: white;
     font-family: verdana;
+    max-width: 100%;
 }
 h1, h2 { text-align: center }
 a {color: black;
@@ -15,7 +16,7 @@ a {color: black;
     text-decoration: none;
     opacity: 0.9;
 }
-li{list-style: none;
+#navList li{list-style: none;
     outline: solid;
     outline-width: thin;
     font-family: verdana;
@@ -33,3 +34,44 @@ li{list-style: none;
 img {opacity: 1;
 color: black;}
 header a {color:white;}
+li{list-style: none;}
+#searchInput{
+    background: white;  
+	border-radius: 15px;
+	cursor: pointer;
+	display: block; 
+	width: 40%;
+    margin-left: -25px;
+    opacity: 0.8;
+}
+p {font-size: 10pt;
+    text-align: left;
+}
+h3{text-align: left !important;
+    color: white !important;
+}
+#submit {
+background-color: white;
+    color: black !important;
+    border-radius:6px;
+    width: 35%;
+   opacity: 1;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+     border:none;
+     display: inline;
+}
+#instaData div {
+
+    column-count:2;
+}
+#instaData img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+#instaData p {
+    background-color: grey;
+    opacity: 0.6;
+}

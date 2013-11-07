@@ -22,7 +22,7 @@ AVF 1311
                 </header>
                 <section data-role="content">
                     <nav>
-                        <ul data-role="listview">
+                        <ul data-role="listview" id="navList">
                             <li>
                                 <span>
                                     <img src="img/camera_01.gif" class="icon">
@@ -56,7 +56,7 @@ AVF 1311
                             <li>
                                 <span>
                                     <img src="img/instagram_01.gif" class="icon">
-                                    <a href="#">Instagram</a>
+                                    <a href="#search">Instagram</a>
                                 </span>
                             </li>
                             <li>
@@ -76,28 +76,56 @@ AVF 1311
                 </section>
             </section>
             <section data-role="page" id="research">
-                <header data-role="header" data-add-back-btn="true">
+                <header data-role="header">
                     <a addBackBtn="true" data-rel="back">Back</a>
                     <h1>Research</h1>
                 </header>
                 <section data-role="content">
                     <nav>
-                        <ul data-role="listview">
-                            <li><a href="#">Data Research, Project Intent</a></li>
-                            <li><a href="#">Accessibility</a></li>
-                            <li><a href="#">Industry Research</a></li>
-                        </ul>
+                        <div data-role="collapsible-set">
+                            <div data-role="collapsible" >
+                                <h3>Data Research, Project Intent</h3>
+                                <p>There are definitely less obvious ways in which Twitter data can be utilized. It is frequently being used these days for logging into accounts. Similar to creating an account using your Facebook page, logging in with Twitter allows you to "create" an account on a website or app without having to go through the full process of creating an account.</p>
+                                <p>When researching Twitter data being used for payments I found an interesting product called Chirpify. This integrates with your Paypal account and allows you to make payments on Twitter. One could, for example, send a tweet that says you'd like to donate $10 to a certain charity. Chirpify will read this tweet and donate the money on your behalf from your PayPal account. Chirpify also has their own API so you can build an app using their data as well.</p>
+                                <p>JSON-P is useful when creating web apps when you need to access data on another domain. JSON cannot be used on cross-domains and JSON-P is a workaround that makes this possible. You can access that data using a script tag and telling it an object name to put it in so you can call it. </p>
+                                <p>JSON-P can be used whenever you need to read data. It could be used in conjunction with your GPS to gather weather data for example, or maybe to get a list of restaurants in your area. It is limited in that it is essentially read-only. This means that while you can use it to create a news roll of a twitter feed, you could not post new data to twitter. </p>
+                                <p>I'm definitely excited about learning how to use the native GPS feature with a weather API. I know it's kind of a common example and used a lot in this course, but I do have an idea for a weather app that I'd like to eventually create so I'd be one step closer to that. I am also interested in accessing the camera and social media API's since sharing via social media is almost expected with most apps these days.</p>
+                                <p>I think the main lesson I've learned about workflow is not to take things for granted. I've definitely not allocated enough time to certain tasks because I think it will be easy or is a part of coding I have a good handle on. I've come to discover however, that sometimes things just don't work like you expect them to. This leads me to allow more time for development than I think necessary just in case. I also have found that the research and design phase are more important than I previously thought because it doesn't matter how well your code works, if the app isn't designed or researched well it can still be a bad app.</p>
+                            </div>
+                            <div data-role="collapsible">
+                                <h2>Accessibility</h2>
+                                <p>Stay tuned!</p>
+                            </div>
+                            <div data-role="collapsible">
+                                <h2>Industry Research</h2>
+                                <p>Stay tuned!</p>
+                            </div>    
+                        </div>
                     </nav>
                 </section>
             </section>
+            <section data-role="page" id="search">
+                <header data-role="header">
+                    <a addBackBtn="true" data-rel="back">Back</a>
+                    <h1>Search</h1>
+                </header>
+                <section data-role="content">
+                    <form>
+                        <label for="search">Search:</label>
+                        <input type="search" name="search" id="searchInput" value="" placeholder="Instagram Tag" />    
+                        <input type="submit" name="submit" value="Submit" id="submit" />
+                    </form>
+                    <div id="instaData">
+                        
+                    </div>
+                </section>
+            </section>
         </div>
+        
         <script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
     </body>
 </html>
