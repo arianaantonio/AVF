@@ -62,16 +62,24 @@ background-color: white;
      border:none;
      display: inline;
 }
-#instaData div {
-
-    column-count:2;
-}
+#instaData div {column-count:2;}
 #instaData img {
-  /* Just in case there are inline attributes */
   width: 100% !important;
   height: auto !important;
 }
 #instaData p {
     background-color: grey;
     opacity: 0.6;
+}
+#movieSubmit {
+background-color: white;
+    color: black !important;
+    border-radius:6px;
+    width: 35%;
+   opacity: 1;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+     border:none;
+     display: inline;
 }

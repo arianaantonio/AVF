@@ -56,13 +56,13 @@ AVF 1311
                             <li>
                                 <span>
                                     <img src="img/instagram_01.gif" class="icon">
-                                    <a href="#search">Instagram</a>
+                                    <a href="#search">Instagram Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
                                     <img src="img/sun_01.gif" class="icon">
-                                    <a href="#">Weather</a>
+                                    <a href="#movieSearch">Movie Search</a>
                                 </span>
                             </li>
                             <li>
@@ -117,6 +117,24 @@ AVF 1311
                     </form>
                     <div id="instaData">
                         
+                    </div>
+                </section>
+            </section>
+            <section data-role="page" id="movieSearch">
+                <header data-role="header">
+                    <a addBackBtn="true" data-rel="back">Back</a>
+                    <h1>Movie Search</h1>
+                </header>
+                <section data-role="content">
+                    <form>
+                        <label for="search">Search:</label>
+                        <input type="search" name="search" id="movieInput" value="" placeholder="Movie Title" />    
+                        <input type="submit" name="submit" value="Submit" id="movieSubmit" />
+                    </form>
+                    <div>
+                        <ul id="movieData">
+                            
+                        </ul>   
                     </div>
                 </section>
             </section>
