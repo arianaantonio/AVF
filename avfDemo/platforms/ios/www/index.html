@@ -7,6 +7,8 @@ AVF 1311
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="HandheldFriendly" content="True">
+		<!--<meta name="MobileOptimized" content="320"/>-->
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
@@ -25,49 +27,49 @@ AVF 1311
                         <ul data-role="listview" id="navList">
                             <li>
                                 <span>
-                                    <img src="img/camera_01.gif" class="icon">
+                                    <img src="img/camera_01.gif" alt="camera" class="icon">
                                     <a href="#">Camera</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/compass_01.gif" class="icon">
+                                    <img src="img/compass_01.gif" alt="compass" class="icon">
                                     <a href="#">Compass</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/contacts_01.gif" class="icon">
+                                    <img src="img/contacts_01.gif" alt="contacts" class="icon">
                                     <a href="#">Contacts</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/geo_01.gif" class="icon">
+                                    <img src="img/geo_01.gif" alt="geo" class="icon">
                                     <a href="#">Geolocation</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/run_01.gif" class="icon">
+                                    <img src="img/run_01.gif" alt="running" class="icon">
                                     <a href="#">Accelerometer</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/instagram_01.gif" class="icon">
+                                    <img src="img/instagram_01.gif" alt="instaicon" class="icon">
                                     <a href="#search">Instagram Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/sun_01.gif" class="icon">
+                                    <img src="img/sun_01.gif" alt="movieicon" class="icon">
                                     <a href="#movieSearch">Movie Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/research_01.gif" class="icon">
+                                    <img src="img/research_01.gif" alt="researchicon" class="icon">
                                     <a href="#research">Research</a>
                                 </span>
                             </li>
@@ -107,7 +109,7 @@ AVF 1311
             <section data-role="page" id="search">
                 <header data-role="header">
                     <a addBackBtn="true" data-rel="back">Back</a>
-                    <h1>Search</h1>
+                    <h1>Instagram Search</h1>
                 </header>
                 <section data-role="content">
                     <form>
@@ -127,8 +129,8 @@ AVF 1311
                 </header>
                 <section data-role="content">
                     <form>
-                        <label for="search">Search:</label>
-                        <input type="search" name="search" id="movieInput" value="" placeholder="Movie Title" />    
+                        <label for="movieInput">Search:</label>
+                        <input type="search" name="movieInput" id="movieInput" value="" placeholder="Movie Title" />    
                         <input type="submit" name="submit" value="Submit" id="movieSubmit" />
                     </form>
                     <div>

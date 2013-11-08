@@ -11,6 +11,8 @@ body {background-image: url(../img/iceburg.jpg);
     max-width: 100%;
 }
 h1, h2 { text-align: center }
+header {border: solid; border-bottom-color: white;}
+header a {border: solid; border-bottom-color: white; border-radius: 20px;}
 a {color: black;
     font-family: verdana;
     text-decoration: none;
@@ -35,7 +37,7 @@ img {opacity: 1;
 color: black;}
 header a {color:white;}
 li{list-style: none;}
-#searchInput{
+#searchInput, #movieInput{
     background: white;  
 	border-radius: 15px;
 	cursor: pointer;
@@ -51,25 +53,57 @@ h3{text-align: left !important;
     color: white !important;
 }
 #submit {
-background-color: white;
+    background: linear-gradient(to bottom, #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+    background-color: white;
     color: black !important;
     border-radius:6px;
     width: 35%;
-   opacity: 1;
+    opacity: 1;
     font-size: 20px;
     text-decoration: none;
     cursor: pointer;
-     border:none;
-     display: inline;
+    border:none;
+    display: inline;
 }
-#instaData div {
-    -webkit-column-count: 3;
-    -moz-column-count:    3;
 
-    column-count:2;
-}
-#instaData img {
-  /* Just in case there are inline attributes */
+/*#instaData img {
   width: 100% !important;
   height: auto !important;
+}*/
+#instaData p {
+    background-color: white;
+    color: black;
+    opacity: 0.6;
+}
+#movieSubmit {
+    background: linear-gradient(to bottom, #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+    background-color: white;
+    text-align: left;
+    color: black !important;
+    border-radius:6px;
+    width: 35%;
+    opacity: 1;
+    font-size: 20px;
+    cursor: pointer;
+    border:none;
+    display: inline;
+}
+@media only screen and (max-width: 480px) {
+.picSize {height:25% ;width:25% ;}
+#instaData div {column-count:1;}
+
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+.picSize{height:40% ;width:40% ;}
+p{width:40%;}
+#instaData div {column-count:2;}
+}
+@media only screen and (orientation:landscape) {
+body{background-color: red;}
+#instaData div {column-count:3;}
+}
+#movieData li {
+    background-color: white;
+    opacity: .8;
+    color: grey;
 }
