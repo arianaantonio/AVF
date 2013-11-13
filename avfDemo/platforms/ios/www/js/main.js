@@ -107,6 +107,7 @@ function onFail(message) {
 }
     $("#cameraLink").click(function(){
         alert("working");
+        //navigator.notification.vibrate(2000);
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI }); 
     });
