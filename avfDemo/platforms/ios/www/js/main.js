@@ -3,9 +3,11 @@ Author: Ariana Antonio
 Project 1
 AVF 1311
  */
+
 //global varibles
 var movieInfo;
 
+// search page for instagram
 $('#search').on('pageinit', function(){
     //displaying instagram data
     $("#instaData").empty();
@@ -81,4 +83,31 @@ $('#movieSearch').on('pageinit', function(){
         //console.log(url);
     });
 });
+//geolocation function
+$("#geo").on('pageinit', function(){
+    var works = function(position){
+        alert(position.coords.latitude);
+    };
+    var doesntWork = function(){
+        alert("Could not get your location");
+    };
+    $("#geoLink").click(function(){
+        navigator.geolocation.getCurrentPosition(works, doesntWork);
+    });
+});
+//camera function
+$("#camera").on('pageinit', function(){
+    function onSuccess(imageURI) {
+    var image = document.getElementById('myImage');
+    image.src = imageURI;
+}
 
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+    $("#cameraLink").click(function(){
+        alert("working");
+        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI }); 
+    });
+});
