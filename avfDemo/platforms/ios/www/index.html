@@ -10,7 +10,7 @@ AVF 1311
         <meta name="HandheldFriendly" content="True">
 		<!--<meta name="MobileOptimized" content="320"/>-->
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Demo App</title>
@@ -86,7 +86,7 @@ AVF 1311
                     <nav>
                         <div data-role="collapsible-set">
                             <div data-role="collapsible" >
-                                <h3>Data Research, Project Intent</h3>
+                                <h2>Data Research, Project Intent</h2>
                                 <p>There are definitely less obvious ways in which Twitter data can be utilized. It is frequently being used these days for logging into accounts. Similar to creating an account using your Facebook page, logging in with Twitter allows you to "create" an account on a website or app without having to go through the full process of creating an account.</p>
                                 <p>When researching Twitter data being used for payments I found an interesting product called Chirpify. This integrates with your Paypal account and allows you to make payments on Twitter. One could, for example, send a tweet that says you'd like to donate $10 to a certain charity. Chirpify will read this tweet and donate the money on your behalf from your PayPal account. Chirpify also has their own API so you can build an app using their data as well.</p>
                                 <p>JSON-P is useful when creating web apps when you need to access data on another domain. JSON cannot be used on cross-domains and JSON-P is a workaround that makes this possible. You can access that data using a script tag and telling it an object name to put it in so you can call it. </p>
@@ -96,7 +96,16 @@ AVF 1311
                             </div>
                             <div data-role="collapsible">
                                 <h2>Accessibility</h2>
-                                <p>Stay tuned!</p>
+                                <h3><b>What are some of the ways that you could change your HTML on your Demo app to be more accessible?</b></h3>
+                                <p>I've been trying to use as much semantic markup as I can, i.e.: nav, section, header, footer tags etc., however I only recently started using alt tags on my images as we weren't really taught that previously. While I only just implemented them for best practice and to appease the validator, I think I could go back and make the alt tags more descriptive. Descriptive alt tags are important so that screen reading software can be more clear about what is being displayed on the page. </p>
+                                <h3><b>What are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?</b></h3>
+                                <p>After watching a couple of demo videos it seems the biggest problem is developers not creating their websites and apps with accessibility in mind. In one video I watched a girl navigate MLB.com with her screen reader. She said it's one of the best websites for screen readers and yet she still came across an "unlabeled button" and therefore couldn't interact with it. She also said that when she goes to a website the first thing she does is scroll all the headers in order to figure out where she needs to go. That means that header tags are incredibly important for accessibility. Honestly, I think the biggest hurdle is just awareness. If devs don't understand how important this stuff is then they won't take the time to implement it. </p>
+                                <h3><b>Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</b></h3>
+                                <p>iPhones have a ton of accessibility features. While I knew about their screen readers for the visually impaired, they also have FaceTime for the hard of hearing as well as features for those with motor skill impairments and even attention deficits or cognitive disabilities. 
+                                Microsoft is another company that has developed quite a few products for accessibility. They have things such as keyboards with varying key sizes, electronic pointing devices (that use things like nerve signals and brain waves to point a cursor), touch screens, track balls, and pointing sticks to press keys on a keyboard.</p>
+                                <h3><b>Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</b></h3>
+                                <p>One app I found for Android is called Georgie and it sounds really amazing. It's kind of an all-in-one app for the visually-impaired as it does many things. It can make calls, post a blog or on social media, read books to you, or give you directions. Part of the map feature allows you to mark significant areas on the map. In the video I watched the example is a man who regularly walks a route and knows there is a spot where he often hits his head on a low-hanging branch. The app allows you to mark that spot so as you near it the app says, "Caution: low-hanging branch." They also have a camera feature that can translate text from a photo. In the video a woman uses this to take a photo of a menu at a restaurant and have the app read her the menu. It really is incredible.</p>
+                                <p>There's a simple but useful app on iOS called LookTel that reads money for you. All you have to do is take a photo of a bill and it will read the denomination back to you. It can read a ton of different denominations and doesn't require internet to work.</p>
                             </div>
                             <div data-role="collapsible">
                                 <h2>Industry Research</h2>

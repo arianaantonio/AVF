@@ -15,7 +15,7 @@ $('#search').on('pageinit', function(){
         
         console.log(info);
         $.each(info.data, function(index, photo) {
-            var pic = "<div><h3>'"+ photo.user.username +"'</h3><img src='" + photo.images.thumbnail.url + "' class='picSize'/><p>'" + photo.caption.text + "'</p></div>";
+            var pic = "<div class='picDiv'><h3>'"+ photo.user.username +"'</h3><img src='" + photo.images.thumbnail.url + "' class='picSize'/><p>'" + photo.caption.text + "'</p></div>";
             $("#instaData").append(pic);
         });
     };
@@ -107,7 +107,7 @@ function onFail(message) {
 }
     $("#cameraLink").click(function(){
         alert("working");
-        //navigator.notification.vibrate(2000);
+        navigator.notification.vibrate(2000);
         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI }); 
     });
