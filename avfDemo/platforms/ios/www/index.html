@@ -10,7 +10,7 @@ AVF 1311
         <meta name="HandheldFriendly" content="True">
 		<!--<meta name="MobileOptimized" content="320"/>-->
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <title>Demo App</title>
@@ -34,7 +34,7 @@ AVF 1311
                             <li>
                                 <span>
                                     <img src="img/compass_01.gif" alt="compass" class="icon">
-                                    <a href="#">Compass</a>
+                                    <a href="#compass">Compass</a>
                                 </span>
                             </li>
                             <li>
@@ -155,7 +155,10 @@ AVF 1311
                     <h1>Geo</h1>
                 </header>
                 <section data-role="content">
-                    <a href="#" id="geoLink">Find me!</a>
+                    <input type="submit" name="geoLink" value="Find Me" id="geoLink">
+                    <section id="map">
+                        <img src="http://maps.google.com/maps/api/staticmap?center=Seattle+Washington&zoom=7&size=540x280&maptype=satellite&markers=color:red|47.3635,122.1959&sensor=false" width="540" height="280" alt="Map of current location"/>
+                    </section>
                 </section>
             </section>
             <section data-role="page" id="camera">
@@ -167,12 +170,24 @@ AVF 1311
                     <a href="#" id="cameraLink">Access Camera</a>
                 </section>
             </section>
+            <section data-role="page" id="compass">
+                 <header data-role="header">
+                    <a addBackBtn="true" data-rel="back">Back</a>
+                    <h1>Compass</h1>
+                </header>
+                <section data-role="content">
+                    <a href="#" id="compassLink">Access Compass</a>
+                    <section>
+                        <img src="" id="compassPic">
+                    </section>
+                </section>
+            </section>
         </div>
         
         <script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="phonegap.js"></script>
+        
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

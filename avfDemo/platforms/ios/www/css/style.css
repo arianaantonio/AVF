@@ -110,6 +110,7 @@ p{width:40%;}
     width: 100%;
     column-count:2;
 }
+#map img {width: 740px; height: 500px;}
 }
 @media only screen and (orientation:landscape) {
 .picDiv {
@@ -123,6 +124,7 @@ p{max-width: 100%}
     width: 100%
     column-count:3;
 }
+#map img {width: 980px; height: 620px;}
 }
 #movieData li {
     background-color: white;

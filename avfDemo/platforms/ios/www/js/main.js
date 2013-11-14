@@ -86,7 +86,11 @@ $('#movieSearch').on('pageinit', function(){
 //geolocation function
 $("#geo").on('pageinit', function(){
     var works = function(position){
-        alert(position.coords.latitude);
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        //alert(latitude);
+        //alert(longitude);
+        $("#map img").attr("src", "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=6&size=540x280&maptype=satellite&markers=color:red|" + latitude + "," + longitude + "&sensor=false")
     };
     var doesntWork = function(){
         alert("Could not get your location");
@@ -97,18 +101,33 @@ $("#geo").on('pageinit', function(){
 });
 //camera function
 $("#camera").on('pageinit', function(){
-    function onSuccess(imageURI) {
-    var image = document.getElementById('myImage');
-    image.src = imageURI;
-}
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-    $("#cameraLink").click(function(){
-        alert("working");
-        navigator.notification.vibrate(2000);
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+     var works = function(imageURI) {
+        var image = document.getElementById('myImage');
+        image.src = imageURI;
+        navigator.notification.alert("the message!", callbackFunction, "the title!", "button text!");
+    }
+    var doesntWork = function(imageURI) {
+        alert("Could not access your camera");
+    }
+    var callbackFunction;
+        $("#cameraLink").on("click", function(){
+        
+        navigator.camera.getPicture(works, doesntWork, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI }); 
+    });
+});
+$("#compass").on('pageinit', function(){
+    $("#compassLink").on("click", function(){
+        var callbackFunction;
+        var works = function(heading) {
+            navigator.notification.alert("Your heading is" + heading.magneticHeading, callbackFunction, "Compass Heading", "Show me on a compass");
+            //alert('Heading: ' + heading.magneticHeading);
+            console.log(heading);
+        };
+
+        var doesntWork = function() {
+        alert("Oops! Can't get your bearing.");
+        };
+        navigator.compass.getCurrentHeading(works, doesntWork);
     });
 });
