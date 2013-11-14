@@ -118,11 +118,38 @@ $("#camera").on('pageinit', function(){
 });
 $("#compass").on('pageinit', function(){
     $("#compassLink").on("click", function(){
-        var callbackFunction;
         var works = function(heading) {
-            navigator.notification.alert("Your heading is" + heading.magneticHeading, callbackFunction, "Compass Heading", "Show me on a compass");
-            //alert('Heading: ' + heading.magneticHeading);
-            console.log(heading);
+            console.log(heading.magneticHeading);
+            var compassPhoto = function() {
+                var magHeading = heading.magneticHeading;
+                console.log(magHeading);
+                var compassImg = $("#compassPic");
+                if ((magHeading >= 0 && magHeading <= 22.4) || (magHeading >= 337.5)){
+                    compassImg.attr("src", "img/CompassN.gif" )
+                }
+                if (magHeading >= 22.5 && magHeading <= 67.4) {
+                    compassImg.attr("src", "img/CompassNE.gif")
+                }
+                if (magHeading >= 67.5 && magHeading <= 112.4 ) {
+                    compassImg.attr("src", "img/CompassE.gif" )
+                }
+                if (magHeading >= 112.5 && magHeading <= 157.4) {
+                    compassImg.attr("src", "img/CompassSE.gif")
+                }
+                if (magHeading >= 157.5 && magHeading <= 202.4) {
+                    compassImg.attr("src", "img/CompassS.gif")
+                }
+                if (magHeading >= 202.5 && magHeading <= 247.4) {
+                    compassImg.attr("src", "img/CompassSW.gif" )
+                }
+                if (magHeading >= 247.5 && magHeading <= 292.4) {
+                    compassImg.attr("src", "img/CompassW.gif" )
+                }
+                if (magHeading >= 292.5 && magHeading <= 337.4) {
+                    compassImg.attr("src", "img/CompassNW.gif" )
+                }
+            };
+            navigator.notification.alert("Your heading is: " + heading.magneticHeading, compassPhoto, "Compass Heading", "Show me on a compass");
         };
 
         var doesntWork = function() {

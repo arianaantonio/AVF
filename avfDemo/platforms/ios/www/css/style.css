@@ -33,7 +33,7 @@ a {color: black;
     background-color: grey;
     
 }
-img {opacity: 1;
+.icon {opacity: 1;
 color: black;}
 header a {color:white;}
 li{list-style: none;}
@@ -87,6 +87,8 @@ div.ui-btn, input[type="submit"] {
     text-decoration: none;
     
 }
+#compassPic img {float: left;}
+/*Phone Size*/
 @media only screen and (max-width: 480px) {
 .picSize {height:25% ;width:25% ;}
 #instaData div {
@@ -98,7 +100,12 @@ div.ui-btn, input[type="submit"] {
     float: none;
     margin; 0;
 }
+#map img {
+    width: 460px; 
+    height: 260px;
 }
+}
+/*iPad portrait*/
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 .picSize{height:40% ;width:40% ;}
 .picDiv{ 
@@ -110,9 +117,17 @@ p{width:40%;}
     width: 100%;
     column-count:2;
 }
-#map img {width: 740px; height: 500px;}
+#map img {
+    width: 740px; 
+    height: 500px;
 }
-@media only screen and (orientation:landscape) {
+#compassPic {
+    max-width: 100%;
+
+}
+}
+/*iPad landscape and desktop*/
+@media only screen and (min-width: 769px) {
 .picDiv {
     display: block;
     width: 300px;
