@@ -101,17 +101,16 @@ $("#geo").on('pageinit', function(){
 });
 //camera function
 $("#camera").on('pageinit', function(){
-     var works = function(imageURI) {
-        var image = document.getElementById('myImage');
-        image.src = imageURI;
-        navigator.notification.alert("the message!", callbackFunction, "the title!", "button text!");
+     var works = function(imageLocation) {
+        var postPic = function(){
+            $("#cameraPic").attr("src", imageLocation);
+        }
+        navigator.notification.alert("Great picture! How about we take a look at it?", postPic, "Playback", "Let's Do This!");
     }
-    var doesntWork = function(imageURI) {
+    var doesntWork = function(imageLocation) {
         alert("Could not access your camera");
     }
-    var callbackFunction;
-        $("#cameraLink").on("click", function(){
-        
+    $("#cameraLink").on("click", function(){
         navigator.camera.getPicture(works, doesntWork, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI }); 
     });
