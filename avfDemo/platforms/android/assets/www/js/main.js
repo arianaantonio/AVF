@@ -3,9 +3,11 @@ Author: Ariana Antonio
 Project 1
 AVF 1311
  */
+
 //global varibles
 var movieInfo;
 
+// search page for instagram
 $('#search').on('pageinit', function(){
     //displaying instagram data
     $("#instaData").empty();
@@ -13,7 +15,7 @@ $('#search').on('pageinit', function(){
         
         console.log(info);
         $.each(info.data, function(index, photo) {
-            var pic = "<div><h3>'"+ photo.user.username +"'</h3><img src='" + photo.images.thumbnail.url + "' class='picSize'/><p>'" + photo.caption.text + "'</p></div>";
+            var pic = "<div class='picDiv'><h3>'"+ photo.user.username +"'</h3><img src='" + photo.images.thumbnail.url + "' class='picSize'/><p>'" + photo.caption.text + "'</p></div>";
             $("#instaData").append(pic);
         });
     };
@@ -81,4 +83,77 @@ $('#movieSearch').on('pageinit', function(){
         //console.log(url);
     });
 });
+//geolocation function
+$("#geo").on('pageinit', function(){
+    var works = function(position){
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        //alert(latitude);
+        //alert(longitude);
+        $("#map img").attr("src", "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=6&size=540x280&maptype=satellite&markers=color:red|" + latitude + "," + longitude + "&sensor=false")
+    };
+    var doesntWork = function(){
+        alert("Could not get your location");
+    };
+    $("#geoLink").click(function(){
+        navigator.geolocation.getCurrentPosition(works, doesntWork);
+    });
+});
+//camera function
+$("#camera").on('pageinit', function(){
+     var works = function(imageLocation) {
+        var postPic = function(){
+            $("#cameraPic").attr("src", imageLocation);
+        }
+        navigator.notification.alert("Great picture! How about we take a look at it?", postPic, "Playback", "Let's Do This!");
+    }
+    var doesntWork = function(imageLocation) {
+        alert("Could not access your camera");
+    }
+    $("#cameraLink").on("click", function(){
+        navigator.camera.getPicture(works, doesntWork, { quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI }); 
+    });
+});
+$("#compass").on('pageinit', function(){
+    $("#compassLink").on("click", function(){
+        var works = function(heading) {
+            console.log(heading.magneticHeading);
+            var compassPhoto = function() {
+                var magHeading = heading.magneticHeading;
+                console.log(magHeading);
+                var compassImg = $("#compassPic");
+                if ((magHeading >= 0 && magHeading <= 22.4) || (magHeading >= 337.5)){
+                    compassImg.attr("src", "img/CompassN.gif" )
+                }
+                if (magHeading >= 22.5 && magHeading <= 67.4) {
+                    compassImg.attr("src", "img/CompassNE.gif")
+                }
+                if (magHeading >= 67.5 && magHeading <= 112.4 ) {
+                    compassImg.attr("src", "img/CompassE.gif" )
+                }
+                if (magHeading >= 112.5 && magHeading <= 157.4) {
+                    compassImg.attr("src", "img/CompassSE.gif")
+                }
+                if (magHeading >= 157.5 && magHeading <= 202.4) {
+                    compassImg.attr("src", "img/CompassS.gif")
+                }
+                if (magHeading >= 202.5 && magHeading <= 247.4) {
+                    compassImg.attr("src", "img/CompassSW.gif" )
+                }
+                if (magHeading >= 247.5 && magHeading <= 292.4) {
+                    compassImg.attr("src", "img/CompassW.gif" )
+                }
+                if (magHeading >= 292.5 && magHeading <= 337.4) {
+                    compassImg.attr("src", "img/CompassNW.gif" )
+                }
+            };
+            navigator.notification.alert("Your heading is: " + heading.magneticHeading, compassPhoto, "Compass Heading", "Show me on a compass");
+        };
 
+        var doesntWork = function() {
+        alert("Oops! Can't get your bearing.");
+        };
+        navigator.compass.getCurrentHeading(works, doesntWork);
+    });
+});
