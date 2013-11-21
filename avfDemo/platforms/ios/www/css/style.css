@@ -39,9 +39,9 @@ header a {color:white;}
 li{list-style: none;}
 #searchInput, #movieInput{
     background: white;  
-	border-radius: 15px;
-	cursor: pointer;
-	display: block; 
+        border-radius: 15px;
+        cursor: pointer;
+        display: block; 
     margin-left: -25px;
     opacity: 0.8;
 }

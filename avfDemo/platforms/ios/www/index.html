@@ -27,37 +27,43 @@ AVF 1311
                         <ul data-role="listview" id="navList">
                             <li>
                                 <span>
-                                    <img src="img/camera_01.gif" alt="camera" class="icon">
+                                    <img src="" alt="redbox icon" class="icon">
+                                    <a href="#redbox">Redbox Search</a>
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    <img src="img/camera_01.gif" alt="camera icon" class="icon">
                                     <a href="#camera">Camera</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/compass_01.gif" alt="compass" class="icon">
+                                    <img src="img/compass_01.gif" alt="compass icon" class="icon">
                                     <a href="#compass">Compass</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/geo_01.gif" alt="geo" class="icon">
+                                    <img src="img/geo_01.gif" alt="geo icon" class="icon">
                                     <a href="#geo">Geolocation</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/instagram_01.gif" alt="instaicon" class="icon">
+                                    <img src="img/instagram_01.gif" alt="instagram icon" class="icon">
                                     <a href="#search">Instagram Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/sun_01.gif" alt="movieicon" class="icon">
+                                    <img src="img/sun_01.gif" alt="movie icon" class="icon">
                                     <a href="#movieSearch">Movie Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/research_01.gif" alt="researchicon" class="icon">
+                                    <img src="img/research_01.gif" alt="research icon" class="icon">
                                     <a href="#research">Research</a>
                                 </span>
                             </li>
@@ -109,10 +115,12 @@ AVF 1311
                     <h1>Instagram Search</h1>
                 </header>
                 <section data-role="content">
+                    <a href="https://instagram.com/oauth/authorize/?client_id=b82b3459d471430d9d6955668c68d708&redirect_uri=http://www.ageekinadress.com&response_type=token">Post A Photo</a>
                     <form>
                         <label for="search">Search:</label>
                         <input type="search" name="search" id="searchInput" value="" placeholder="Instagram Tag" />    
                         <input type="submit" name="submit" value="Submit" id="submit" />
+                        <input type="submit" name="Geosubmit" value="Find Photos Near My Location" id="geoSubmit" />
                     </form>
                     <div id="instaData">
                         
@@ -169,6 +177,15 @@ AVF 1311
                     <section>
                         <img src="img/CompassEmpty.gif" id="compassPic" alt="Compass Picture">
                     </section>
+                </section>
+            </section>
+            <section data-role="page" id="redbox">
+                <header data-role="header">
+                    <a addBackBtn="true" data-rel="back">Back</a>
+                    <h1>Redbox</h1>
+                </header>
+                <section data-role="content">
+                    <input type="submit" name="redboxLink" id="redboxLink" value="Find my nearest Redbox kiosk">
                 </section>
             </section>
         </div>
