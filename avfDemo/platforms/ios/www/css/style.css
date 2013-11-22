@@ -18,6 +18,7 @@ a {color: black;
     text-decoration: none;
     opacity: 0.9;
 }
+#research a {text-decoration: underline;}
 #navList li{list-style: none;
     outline: solid;
     outline-width: thin;
@@ -39,9 +40,9 @@ header a {color:white;}
 li{list-style: none;}
 #searchInput, #movieInput{
     background: white;  
-	border-radius: 15px;
-	cursor: pointer;
-	display: block; 
+        border-radius: 15px;
+        cursor: pointer;
+        display: block; 
     margin-left: -25px;
     opacity: 0.8;
 }
@@ -72,6 +73,11 @@ p {font-size: 10pt;
     color: black;
     opacity: 0.6;
 }
+/*.picDiv {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}*/
 div.ui-btn, input[type="submit"] {
 
    
@@ -98,7 +104,7 @@ div.ui-btn, input[type="submit"] {
 .picDiv{
     width: auto;
     float: none;
-    margin; 0;
+    margin; 30px;
 }
 #map img {
     width: 460px; 
@@ -117,7 +123,9 @@ div.ui-btn, input[type="submit"] {
 }
 p{width:40%;}
 #instaData div {
-    width: 100%;
+    float:left;
+    display: block;
+    width: 100%%;
     column-count:2;
 }
 #map img {
@@ -139,13 +147,14 @@ p{width:40%;}
     display: block;
     width: 300px;
     float: left;
-    margin-left: 30px;
-}
-p{max-width: 100%}
-#instaData div {
-    width: 100%
+    margin-left: 0px;
     column-count:3;
 }
+p{max-width: 50%%}
+/*#instaData div {
+    width: 100%;
+    column-count:3;
+}*/
 #map img {
     width: 980px;
     height: 620px;

@@ -9,6 +9,36 @@ var movieInfo;
 
 // search page for instagram
 $('#search').on('pageinit', function(){
+
+    //search by location
+    var instaLocation = function(places){
+        console.log(places);
+        var displayPhotos = function(){
+            console.log("Photos being displayed");
+        };
+        navigator.notification.alert("We found " + places.data.length + " photos near you", displayPhotos, "Found Photos", "Take a look!");
+        $.each(places.data, function(index, photo) {
+            var pic = "<div class='picDiv'><h3>'"+ photo.user.username +"'</h3><a href='" + photo.link + "'><img src='" + photo.images.thumbnail.url + "' class='picSize'/></a><p>'" + photo.caption.text + "'</p></div>";
+            $("#instaData").append(pic);
+        });
+    
+    };
+    var photoAlert = function(quantity){
+        console.log(quantity);
+        navigator.notification.alert("Found Photos", instaLocation, "We found " + quantity.data.length + " photos near you", "Take a look!");
+
+    };
+    var works = function(position){
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var url= "https://api.instagram.com/v1/media/search?lat=" + latitude + "&lng=" + longitude + "&client_id=b82b3459d471430d9d6955668c68d708";
+        $.getJSON(url, instaLocation);
+
+        console.log(url);
+    };
+    var doesntWork = function(){
+        alert("Sorry, couldn't get your location");
+    };
     //displaying instagram data
     $("#instaData").empty();
     var instagramOutput = function(info) {
@@ -28,6 +58,10 @@ $('#search').on('pageinit', function(){
         $.getJSON(url, instagramOutput);
         console.log(url);
         
+    });
+    $("#geoSubmit").on("click", function(e){
+        e.preventDefault();
+        navigator.geolocation.getCurrentPosition(works, doesntWork);   
     });
     
 });
@@ -90,7 +124,7 @@ $("#geo").on('pageinit', function(){
         var longitude = position.coords.longitude;
         //alert(latitude);
         //alert(longitude);
-        $("#map img").attr("src", "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=6&size=540x280&maptype=satellite&markers=color:red|" + latitude + "," + longitude + "&sensor=false")
+        $("#map img").attr("src", "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=6&size=540x280&maptype=satellite&markers=color:red|" + latitude + "," + longitude + "&sensor=false");
     };
     var doesntWork = function(){
         alert("Could not get your location");
@@ -104,17 +138,18 @@ $("#camera").on('pageinit', function(){
      var works = function(imageLocation) {
         var postPic = function(){
             $("#cameraPic").attr("src", imageLocation);
-        }
+        };
         navigator.notification.alert("Great picture! How about we take a look at it?", postPic, "Playback", "Let's Do This!");
-    }
+    };
     var doesntWork = function(imageLocation) {
         alert("Could not access your camera");
-    }
+    };
     $("#cameraLink").on("click", function(){
         navigator.camera.getPicture(works, doesntWork, { quality: 50,
             destinationType: Camera.DestinationType.FILE_URI }); 
     });
 });
+//compass function
 $("#compass").on('pageinit', function(){
     $("#compassLink").on("click", function(){
         var works = function(heading) {
@@ -124,28 +159,28 @@ $("#compass").on('pageinit', function(){
                 console.log(magHeading);
                 var compassImg = $("#compassPic");
                 if ((magHeading >= 0 && magHeading <= 22.4) || (magHeading >= 337.5)){
-                    compassImg.attr("src", "img/CompassN.gif" )
+                    compassImg.attr("src", "img/CompassN.gif" );
                 }
                 if (magHeading >= 22.5 && magHeading <= 67.4) {
-                    compassImg.attr("src", "img/CompassNE.gif")
+                    compassImg.attr("src", "img/CompassNE.gif");
                 }
                 if (magHeading >= 67.5 && magHeading <= 112.4 ) {
-                    compassImg.attr("src", "img/CompassE.gif" )
+                    compassImg.attr("src", "img/CompassE.gif" );
                 }
                 if (magHeading >= 112.5 && magHeading <= 157.4) {
-                    compassImg.attr("src", "img/CompassSE.gif")
+                    compassImg.attr("src", "img/CompassSE.gif");
                 }
                 if (magHeading >= 157.5 && magHeading <= 202.4) {
-                    compassImg.attr("src", "img/CompassS.gif")
+                    compassImg.attr("src", "img/CompassS.gif");
                 }
                 if (magHeading >= 202.5 && magHeading <= 247.4) {
-                    compassImg.attr("src", "img/CompassSW.gif" )
+                    compassImg.attr("src", "img/CompassSW.gif" );
                 }
                 if (magHeading >= 247.5 && magHeading <= 292.4) {
-                    compassImg.attr("src", "img/CompassW.gif" )
+                    compassImg.attr("src", "img/CompassW.gif" );
                 }
                 if (magHeading >= 292.5 && magHeading <= 337.4) {
-                    compassImg.attr("src", "img/CompassNW.gif" )
+                    compassImg.attr("src", "img/CompassNW.gif" );
                 }
             };
             navigator.notification.alert("Your heading is: " + heading.magneticHeading, compassPhoto, "Compass Heading", "Show me on a compass");
@@ -157,3 +192,38 @@ $("#compass").on('pageinit', function(){
         navigator.compass.getCurrentHeading(works, doesntWork);
     });
 });
+
+/*$("#redbox").on('pageinit', function(){
+    var redboxOutput = function(locations){
+        console.log("working3");
+        console.log(locations);
+    };
+    var works = function(position) {
+        var redboxOutput = function(locations){
+            console.log("working3");
+            console.log(locations);
+        };
+        var test = new Object();
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var redboxUrl = "https://api.redbox.com/v3/stores/latlong/" + latitude + "," +  longitude + "?radius=20&count=10&pageNum=1&pageSize=1&apiKey=765ca215ae0af09cf66735446206fc98&";
+        
+        $.ajax({
+            url: redboxUrl,
+            dataType: 'jsonp',
+            jsonpCallback: "redboxOutput",
+        });
+        $.getJSON(redboxUrl, redboxOutput);
+        //redboxOutput(redboxUrl);
+        console.log(redboxUrl);
+        console.log(redboxOutput);
+    };
+    var doesntWork = function(){
+        alert("Sorry, we couldn't get your location");
+    };
+    $("#redboxLink").on("click", function(){
+        //console.log("working");
+        navigator.geolocation.getCurrentPosition(works, doesntWork);
+    });
+
+});*/

@@ -27,37 +27,37 @@ AVF 1311
                         <ul data-role="listview" id="navList">
                             <li>
                                 <span>
-                                    <img src="img/camera_01.gif" alt="camera" class="icon">
+                                    <img src="img/camera_01.gif" alt="camera icon" class="icon">
                                     <a href="#camera">Camera</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/compass_01.gif" alt="compass" class="icon">
+                                    <img src="img/compass_01.gif" alt="compass icon" class="icon">
                                     <a href="#compass">Compass</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/geo_01.gif" alt="geo" class="icon">
+                                    <img src="img/geo_01.gif" alt="geo icon" class="icon">
                                     <a href="#geo">Geolocation</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/instagram_01.gif" alt="instaicon" class="icon">
+                                    <img src="img/instagram_01.gif" alt="instagram icon" class="icon">
                                     <a href="#search">Instagram Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/sun_01.gif" alt="movieicon" class="icon">
+                                    <img src="img/sun_01.gif" alt="movie icon" class="icon">
                                     <a href="#movieSearch">Movie Search</a>
                                 </span>
                             </li>
                             <li>
                                 <span>
-                                    <img src="img/research_01.gif" alt="researchicon" class="icon">
+                                    <img src="img/research_01.gif" alt="research icon" class="icon">
                                     <a href="#research">Research</a>
                                 </span>
                             </li>
@@ -97,7 +97,32 @@ AVF 1311
                             </div>
                             <div data-role="collapsible">
                                 <h2>Industry Research</h2>
-                                <p>Stay tuned!</p>
+                                <h3><b>What are the 'top selling' app categories in the U.S.? Japan? Great Britain?</b></h3>
+                                <p>In each country listed the top app category is Games. That is also true on a global scale. After that it varies a bit but is still pretty similar. The US and UK claim Social Networking as their second most popular app type while Japan has Entertainment. One interesting thing I discovered about Japan is that Books is number 3. That's something that would be hard to believe about the US. </p>
+                                <h3><b>Based on your three answers above, what might you infer about each of the markets listed?</b></h3>
+                                <p>It would seem that some form of entertainment rules our phone usage. Whether that entertainment comes in the form of games, socializing with friends, or watching videos we primarily use our phones to be entertained in some way. Most likely this is because phones are often used during micro breaks rather than taking the time to sit down and use a productivity app. </p>
+                                <h3><b>What is the average cost and bandwidth limits per user (in general) in each of the three markets? How may this impact development?</b></h3>
+                                <p><ul>
+                                        <li>The average cost of bandwidth per megabit per second in each specified country is:</li>
+                                        <li>US: 41.70</li>
+                                        <li>Japan: 21.34</li>
+                                        <li>UK: 2.12</li>
+                                        <br>
+                                        <li>Bandwidth caps:</li>
+                                        <li>US: 250 gbs</li>
+                                        <li>UK: Many providers have unlimited date with no caps</li>
+                                        <li>Japan: 50gbs</li>
+                                    </ul> 
+                                    <p>This definitely means that when designing a mobile app you have to try to keep in mind that some people may not have a lot of bandwidth available. So you should try to develop an app that is as efficient as possible and doesn't rely on a constant internet connection or frequent updates.</p>  
+                                <h3><b>And, finally, what would be your suggested strategy in project topic and global market choice? Feel free to have a first and second choice.</b></h3>   
+                                <p>I think it's wise to make apps that kind of span across multiple categories. It seems obvious to make a game since those are the most popular, however I don't think they last as long. I frequently download a game, play it everyday for weeks, then get bored and move on. The apps that have the best longevity (on my phone at least) are social networking and productivity. So, why not combine a game with a productivity? There are a few apps out there that make a game out of checking things off of a to-do list. For instance, checking things off your list allows you to buy new weapons for a character in an game. You could also make a game out of logging exercises. The point is to make something people will use everyday and make it fun. Adding a social component is usually important too. Let your users connect with friends to cheer them on and share achievements. </p> 
+                                <h3><b>References:</b></h3>
+                                    <ul>
+                                        <li>Reyburn, S. (n.d.). App Annie takes an-depth look at the mobile app economy in Japan - Inside Mobile Apps. Inside Mobile Apps. Retrieved November 18, 2013,  <a href="http://www.insidemobileapps.com/2013/01/28/app-annie-takes-an-depth-look-at-the-mobile-app-economy-in-japan/">from here.</a></li><br>
+                                        <li>Most popular Apple App Store categories in July 2013. (n.d.). Statista RSS. Retrieved November 18, 2013, <a href="http://www.statista.com/statistics/270291/popular-categories-in-the-app-store/">from here.</a></li><br>
+                                        <li>Broadband and telecom - Organisation for Economic Co-operation and Development. (2013, September 30). Broadband and telecom - Organisation for Economic Co-operation and Development. Retrieved November 18, 2013, <a href="http://www.oecd.org/sti/broadband/oecdbroadbandportal.htm">from here.</a></li><br>
+                                        <li>Murphy, D. (2011, June 16). How Bad Do We Really Have it? Bandwidth Caps Around the World. Maximum PC. Retrieved November 18, 2013, <a href="http://www.maximumpc.com/article/features/how_bad_do_we_really_have_it_bandwidth_caps_around_world">from here.</a></li>
+                                    </ul>
                             </div>    
                         </div>
                     </nav>
@@ -109,10 +134,12 @@ AVF 1311
                     <h1>Instagram Search</h1>
                 </header>
                 <section data-role="content">
+                    <!--<a href="https://instagram.com/oauth/authorize/?client_id=b82b3459d471430d9d6955668c68d708&redirect_uri=http://www.ageekinadress.com&response_type=token">Post A Photo</a>-->
                     <form>
                         <label for="search">Search:</label>
                         <input type="search" name="search" id="searchInput" value="" placeholder="Instagram Tag" />    
                         <input type="submit" name="submit" value="Submit" id="submit" />
+                        <input type="submit" name="Geosubmit" value="Find Photos Near My Location" id="geoSubmit" />
                     </form>
                     <div id="instaData">
                         
