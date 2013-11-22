@@ -9,19 +9,31 @@ var movieInfo;
 
 // search page for instagram
 $('#search').on('pageinit', function(){
+
+    //search by location
     var instaLocation = function(places){
         console.log(places);
+        var displayPhotos = function(){
+            console.log("Photos being displayed");
+        };
+        navigator.notification.alert("We found " + places.data.length + " photos near you", displayPhotos, "Found Photos", "Take a look!");
         $.each(places.data, function(index, photo) {
-            var pic = "<div class='picDiv'><h3>'"+ photo.user.username +"'</h3><img src='" + photo.images.thumbnail.url + "' class='picSize'/><p>'" + photo.caption.text + "'</p></div>";
+            var pic = "<div class='picDiv'><h3>'"+ photo.user.username +"'</h3><a href='" + photo.link + "'><img src='" + photo.images.thumbnail.url + "' class='picSize'/></a><p>'" + photo.caption.text + "'</p></div>";
             $("#instaData").append(pic);
         });
-    };
     
+    };
+    var photoAlert = function(quantity){
+        console.log(quantity);
+        navigator.notification.alert("Found Photos", instaLocation, "We found " + quantity.data.length + " photos near you", "Take a look!");
+
+    };
     var works = function(position){
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        var url= "https://api.instagram.com/v1/media/search?lat=" + latitude + "&lng=" + longitude + "&access_token=222363413.b82b345.8e92af8220534f4d85954aecd06b4330"
+        var url= "https://api.instagram.com/v1/media/search?lat=" + latitude + "&lng=" + longitude + "&client_id=b82b3459d471430d9d6955668c68d708";
         $.getJSON(url, instaLocation);
+
         console.log(url);
     };
     var doesntWork = function(){
@@ -181,11 +193,11 @@ $("#compass").on('pageinit', function(){
     });
 });
 
-$("#redbox").on('pageinit', function(){
-    /*var redboxOutput = function(locations){
+/*$("#redbox").on('pageinit', function(){
+    var redboxOutput = function(locations){
         console.log("working3");
         console.log(locations);
-    };*/
+    };
     var works = function(position) {
         var redboxOutput = function(locations){
             console.log("working3");
@@ -196,11 +208,11 @@ $("#redbox").on('pageinit', function(){
         var longitude = position.coords.longitude;
         var redboxUrl = "https://api.redbox.com/v3/stores/latlong/" + latitude + "," +  longitude + "?radius=20&count=10&pageNum=1&pageSize=1&apiKey=765ca215ae0af09cf66735446206fc98&";
         
-        /*$.ajax({
+        $.ajax({
             url: redboxUrl,
             dataType: 'jsonp',
             jsonpCallback: "redboxOutput",
-        });*/
+        });
         $.getJSON(redboxUrl, redboxOutput);
         //redboxOutput(redboxUrl);
         console.log(redboxUrl);
@@ -214,4 +226,4 @@ $("#redbox").on('pageinit', function(){
         navigator.geolocation.getCurrentPosition(works, doesntWork);
     });
 
-});
+});*/
